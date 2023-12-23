@@ -58,7 +58,7 @@ void clear(List* l) {
   Node* temp;
   while (l->curr->next_node != NULL) {
     temp = l->curr->next_node;
-    l->curr->next_node->next_node;
+    l->curr->next_node = l->curr->next_node->next_node;
     free(temp);
   }
   l->length = 0;
