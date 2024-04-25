@@ -10,7 +10,8 @@ int main(void) {
     printf("\n");
     //selection_sort(array, array_size);
     //bubble_sort(array, array_size);
-    insertion_sort(array, array_size);
+    //insertion_sort(array, array_size);
+    merge_sort(array, 0, array_size - 1); // array_size shloud be n - 1
     for (int i = 0; i < array_size; i++) printf("%d ", array[i]);
     printf("\n");
 
