@@ -7,5 +7,11 @@ run:
 valgrind:
 	valgrind ./elf
 
+test:
+	./elf < test.in > test.out
+
+diff:
+	diff test.in test.out
+
 clean:
 	rm elf
