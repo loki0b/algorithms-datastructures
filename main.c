@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "tools.h"
 #include "sort.h"
+#include "search.h"
 
 int main(void) {
     int array[] = {3, 2, 1, 7, 4, 42, 13, 78, 5, 23, 111, 9, 8};
@@ -12,6 +13,8 @@ int main(void) {
     //bubble_sort(array, array_size);
     //insertion_sort(array, array_size);
     merge_sort(array, 0, array_size - 1); // array_size should be n - 1
+    int index = sorted_sequential_search(array, 7);
+    printf("index: %d\n", index);
     for (int i = 0; i < array_size; i++) printf("%d ", array[i]);
     printf("\n");
 
