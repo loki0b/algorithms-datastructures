@@ -4,5 +4,8 @@ build:
 run:
 	./elf
 
+valgrind:
+	valgrind ./elf
+
 clean:
 	rm elf
