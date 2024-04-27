@@ -6,9 +6,9 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-void merge(int *array, size_t l, size_t r) {  // l -> the index 0 of this part of this array, r -> the lenght of this part of the array
-    size_t m; // the median index of the array
-    size_t i1, i2; // auxiliar index;
+void merge(int *array, int l, int r) {  // l -> the index 0 of this part of this array, r -> the lenght of this part of the array
+    int m; // the median index of the array
+    int i1, i2; // auxiliar index;
     int *temp_array;
     
     temp_array = malloc(sizeof(array[0]) * (r + 1));
@@ -27,9 +27,9 @@ void merge(int *array, size_t l, size_t r) {  // l -> the index 0 of this part o
     free(temp_array);
 }
 
-void merge_sort(int *array, size_t l, size_t r) { // l -> the leftmost index of the array, r -> the rightmost index of the array
+void merge_sort(int *array, int l, int r) { // l -> the leftmost index of the array, r -> the rightmost index of the array
     if (l < r) {
-        size_t m; // the median index of the array
+        int m; // the median index of the array
         
         m = (l + r) / 2;
         merge_sort(array, l, m);
