@@ -31,14 +31,14 @@ int hoare_partition(int *array, int l, int r) {
         
         do {
             i++;
-        } while ( !(array[i] >= p || i >= r) );
+        } while (array[i] < p && i < r);
        
         do {
             j--;
-        } while ( !(array[j] <= p) );
+        } while (array[j] > p);
 
         swap(&array[i], &array[j]);
-    } while ( !(i >= j) );
+    } while (i < j);
 
     swap(&array[i], &array[j]);
     swap(&array[l], &array[j]);
