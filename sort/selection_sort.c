@@ -1,11 +1,11 @@
-#include "../tools.h"
-#include <stddef.h>
-
 // Sorts a given array by selection sort
 // Input: An array A[0..n - 1] of orderable elements
 // Output: Array A[0..n - 1] sorted in nondecreasing order
-void selection_sort(int *array, size_t array_size) {
-    size_t n;
+
+include "../tools.h"
+
+void selection_sort(int *array, int array_size) {
+    int n;
     
     n = array_size;
     for (int i = 0; i <= n - 2; i++) {

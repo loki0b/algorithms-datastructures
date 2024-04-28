@@ -1,10 +1,9 @@
-#include <stddef.h>
-
 // Sorts a given array by insertion sort
 // Input: An array A[0..n - 1] of n orderable elements
-// Output: Array A[0..n - 1] sorted in nondecreasing order
-void insertion_sort(int *array, size_t array_size) {
-    size_t n;
+// Output: Array A[0..n - 1] sorted in nondecreasing orderinclude <stddef.h>
+
+void insertion_sort(int *array, int array_size) {
+    int n;
 
     n = array_size;
     for (int i = 1; i <= n - 1; i++) {

@@ -3,7 +3,6 @@
 // Input: An array A[0..n - 1] of orderable elements
 // Output: An array A[0..n - 1] sorted in nondecreasing order
 
-#include <stddef.h>
 #include <stdlib.h>
 
 void merge(int *array, int l, int r) {  // l -> the index 0 of this part of this array, r -> the lenght of this part of the array
@@ -11,7 +10,7 @@ void merge(int *array, int l, int r) {  // l -> the index 0 of this part of this
     int i1, i2; // auxiliar index;
     int *temp_array;
     
-    temp_array = malloc(sizeof(array[0]) * (r + 1));
+    temp_array = malloc(sizeof (int) * (r + 1));
     for (int i = l; i <= r; i++) temp_array[i] = array[i]; // copying
 
     m = (l + r) / 2;
