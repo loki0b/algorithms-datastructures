@@ -6,7 +6,7 @@
 #include <stddef.h>
 
 // nonrecursive binary search
-int binary_search(int *array, int k, size_t array_size) {
+int binary_search(int *array, int k, int array_size) {
     int l, r;
 
     l = 0;
