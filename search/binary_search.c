@@ -3,8 +3,6 @@
 // Input: An array A[0..n - 1] sorted in ascending order, a search key and an array size
 // Output: An index of the array's element tha is equal to K or -1 if there is no such element
 
-#include <stddef.h>
-
 // nonrecursive binary search
 int binary_search(int *array, int k, int array_size) {
     int l, r;

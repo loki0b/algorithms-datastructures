@@ -3,10 +3,8 @@
 // Input: An array A of n elements, a search key K and the array size
 // Output: The index of the first element A[0..n - 1] whose value is equal to K or -1 if no such element is found
 
-#include <stddef.h>
-
 // non sorted array sequential search
-int sequential_search(int *array, int k, size_t array_size) {
+int sequential_search(int *array, int k, int array_size) {
     int i, n;
     
     n = array_size;
