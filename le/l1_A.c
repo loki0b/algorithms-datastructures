@@ -3,7 +3,6 @@
 
 void swap(int *a, int *b);
 void quick_sort(int *array, int l, int r);
-int calculate_cost(int *array, int r, int array_size);
 
 int main(void) {
     unsigned int n; // number of chocolate bars (2 <= n <= 3 * 10^5)
