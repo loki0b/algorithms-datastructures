@@ -5,12 +5,12 @@
 
 #include <stdlib.h>
 
-void merge(int *array, int l, int r) {  // l -> the index 0 of this part of this array, r -> the lenght of this part of the array
+void merge(int *array, int l, int r, int n) {  // l -> the index 0 of this part of this array, r -> the lenght of this part of the array
     int m; // the median index of the array
     int i1, i2; // auxiliar index;
     int *temp_array;
     
-    temp_array = malloc(sizeof (int) * (r + 1));
+    temp_array = malloc(sizeof (int) * n);
     for (int i = l; i <= r; i++) temp_array[i] = array[i]; // copying
 
     m = (l + r) / 2;
@@ -26,13 +26,13 @@ void merge(int *array, int l, int r) {  // l -> the index 0 of this part of this
     free(temp_array);
 }
 
-void merge_sort(int *array, int l, int r) { // l -> the leftmost index of the array, r -> the rightmost index of the array
+void merge_sort(int *array, int l, int r, int n) { // l -> the leftmost index of the array, r -> the rightmost index of the array
     if (l < r) {
         int m; // the median index of the array
         
         m = (l + r) / 2;
-        merge_sort(array, l, m);
-        merge_sort(array, m + 1, r);
-        merge(array, l, r);
+        merge_sort(array, l, m, n);
+        merge_sort(array, m + 1, r, n);
+        merge(array, l, r, n);
     }
 }
