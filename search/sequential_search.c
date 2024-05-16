@@ -5,12 +5,14 @@
 
 // non sorted array sequential search
 int sequential_search(int *array, int k, int n) {
-    
-    for (int i = 0; i < n; i++) {
-        if (array[i] == k) { return i; }
+    int i;
+
+    i = 0;
+    while (i < n && array[i] != k) {
+        i++;
     }
 
-    return -1;
+    return (i < n) ? i : -1; 
 }
 
 // sorted array sequential search
@@ -18,10 +20,9 @@ int sorted_sequential_search(int *array, int k, int n) {
     int i;
     
     i = 0;
-    while (i < n) {
-        if (array[i] >= k) { break; }
+    while (i < n && array[i] < k) {
         i++;
     }
-    if (array[i] == k) { return i; }
-    else { return -1; }
+
+    return (array[i] == k) ? i : -1;
 }
