@@ -8,7 +8,7 @@ int binary_search(int *array, int k, int n) {
     int l, r;
 
     l = 0;
-    r = array_size;
+    r = n;
     while (l <= r) {
         int m;
 
