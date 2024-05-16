@@ -14,11 +14,13 @@ int main(void) {
     //selection_sort(array, array_size);
     //bubble_sort(array, array_size);
     //insertion_sort(array, array_size);
-    merge_sort(array, 0, array_size - 1, array_size); // array_size should be n - 1
+    //merge_sort(array, 0, array_size - 1, array_size); // array_size should be n - 1
     //int index = sorted_sequential_search(array, 7);
-    //quick_sort(array, 0, array_size - 1);
+    quick_sort(array, 0, array_size - 1);
     //int index = binary_search(array, 42, array_size);
     //printf("index: %d\n", index);
+    int b = sorted_sequential_search(array, 42, array_size);
+    printf("%d\n", b);
     for (int i = 0; i < array_size; i++) printf("%d ", array[i]);
     printf("\n");
 

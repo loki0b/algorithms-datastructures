@@ -4,7 +4,7 @@
 // Output: An index of the array's element tha is equal to K or -1 if there is no such element
 
 // nonrecursive binary search
-int binary_search(int *array, int k, int array_size) {
+int binary_search(int *array, int k, int n) {
     int l, r;
 
     l = 0;
