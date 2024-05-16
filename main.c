@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include "tools.h"
-#include "sort.h"
-#include "search.h"
+#include "include/tools.h"
+#include "include/sort.h"
+#include "include/search.h"
 
 // TODO: how to create docs for functions in C?
 
