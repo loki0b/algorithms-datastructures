@@ -2,7 +2,7 @@
 // Input: An array A[0..n - 1] of orderable elements
 // Output: Array A[0..n - 1] sorted in nondecreasing order
 
-#include "../tools.h"
+#include "../include/tools.h"
 
 void selection_sort(int *array, int array_size) {
     int n;
