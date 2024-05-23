@@ -1,28 +1,26 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "include/tools.h"
 #include "include/sort.h"
 #include "include/search.h"
+#include "include/list.h"
 
+#define SIZE 10
 // TODO: how to create docs for functions in C?
 
 int main(void) {
-    int array[] = {3, 2, 1, 7, 4, 42, 42, 13, 78, 5, 23, 111, 9, 8};
-    int array_size = sizeof(array) / sizeof(array[0]);
+    array_list *l = create_list(SIZE);
+    insert(l, 4);
+    append(l, 3);
+    append(l, 2);
+    pop(l);
     
-    for (int i = 0; i < array_size; i++) printf("%d ", array[i]);
+    for (int i = 0; i < length(l); i++) { 
+        printf("%d, ", get_value(l, i));
+    }
     printf("\n");
-    //selection_sort(array, array_size);
-    //bubble_sort(array, array_size);
-    //insertion_sort(array, array_size);
-    //merge_sort(array, 0, array_size - 1, array_size); // array_size should be n - 1
-    //int index = sorted_sequential_search(array, 7);
-    quick_sort(array, 0, array_size - 1);
-    //int index = binary_search(array, 42, array_size);
-    //printf("index: %d\n", index);
-    int b = sorted_sequential_search(array, 42, array_size);
-    printf("%d\n", b);
-    for (int i = 0; i < array_size; i++) printf("%d ", array[i]);
-    printf("\n");
-
+    
+    delete_array_list(l);
+    free(l);
     return 0;
 }
