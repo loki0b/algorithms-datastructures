@@ -1,7 +1,4 @@
-typedef struct node {
-    int element;
-    struct node *next_node;
-} node;
+#include <stdlib.h>
 
 node* create_node(node *next_node, int element) {
     node *n;

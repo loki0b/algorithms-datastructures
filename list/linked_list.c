@@ -1,9 +1,5 @@
 #include <stdlib.h>
-
-typedef struct link {
-    int element;
-    struct link *next_node;
-} node;
+#include "../include/node.h"
 
 typedef struct list {
     node *head;
@@ -11,19 +7,6 @@ typedef struct list {
     node *curr;
     int length;
 } linked_list; 
-
-node* create_node(node *next_node, int element) {
-    node *n;
-
-    n = (node*) malloc(sizeof (node));
-    if (n == NULL) {
-        return NULL;
-    }
-    n->element = element;
-    n->next_node = next_node;
-
-    return n;
-}
 
 linked_list* ll_create_list() {
     linked_list *l;

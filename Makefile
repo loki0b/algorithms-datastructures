@@ -1,5 +1,5 @@
 build:
-	gcc -Wall ./*.c search/*.c sort/*.c list/*.c -o elf
+	gcc -Wall ./*.c search/*.c sort/*.c list/*.c types/*.c -o elf
 
 run:
 	./elf
