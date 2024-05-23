@@ -9,18 +9,8 @@
 // TODO: how to create docs for functions in C?
 
 int main(void) {
-    array_list *l = create_list(SIZE);
-    insert(l, 4);
-    append(l, 3);
-    append(l, 2);
-    pop(l);
-    
-    for (int i = 0; i < length(l); i++) { 
-        printf("%d, ", get_value(l, i));
-    }
-    printf("\n");
-    
-    delete_array_list(l);
-    free(l);
+    linked_list *l = ll_create_list();
+    ll_insert(l, 3);
+    ll_delete_list(l);
     return 0;
 }
