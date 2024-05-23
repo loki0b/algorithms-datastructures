@@ -2,7 +2,6 @@
 #include "include/sort.h"
 #include "include/search.h"
 #include "include/list.h"
-#include "include/types.h"
 
 // TODO: how to create docs for functions in C?
 

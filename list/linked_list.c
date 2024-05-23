@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "../include/node.h"
+#include "../include/types.h"
 
 typedef struct list {
     node *head;

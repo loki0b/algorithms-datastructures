@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include "../include/types.h"
 
 node* create_node(node *next_node, int element) {
     node *n;
