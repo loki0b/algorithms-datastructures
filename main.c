@@ -9,5 +9,6 @@ int main(void) {
     stack* s = s_create_stack();
     s_push(s, 3);
     s_delete_stack(s);
+    
     return 0;
 }

@@ -1,10 +1,27 @@
 #include <stdlib.h>
-#include "../include/types.h"
+
+typedef struct link {
+    int element;
+    struct link *next_node;
+} node;
 
 typedef struct list {
-    node* top; // reference to the first element -> LIFO
-    int length; 
+    node* top;
+    int length;
 } stack;
+
+node* s_create_node(node *next_node, int element) {
+    node *n;
+
+    n = (node*) malloc(sizeof (node));
+    if (n == NULL) {
+        return NULL;
+    }
+    n->element = element;
+    n->next_node = next_node;
+
+    return n;
+}
 
 stack* s_create_stack() {
     stack *s;
@@ -22,7 +39,7 @@ stack* s_create_stack() {
 int s_push(stack *s, int element) {
     node *n;
 
-    n = create_node(s->top, element);
+    n = s_create_node(s->top, element);
     if (n == NULL) {
         return -1;
     }

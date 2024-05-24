@@ -1,5 +1,9 @@
 #include <stdlib.h>
-#include "../include/types.h"
+
+typedef struct link {
+    int element;
+    struct link *next_node;
+} node;
 
 typedef struct list {
     node *head;
@@ -8,6 +12,19 @@ typedef struct list {
     int length;
 } linked_list; 
 
+node* ll_create_node(node *next_node, int element) {
+    node *n;
+
+    n = (node*) malloc(sizeof (node));
+    if (n == NULL) {
+        return NULL;
+    }
+    n->element = element;
+    n->next_node = next_node;
+
+    return n;
+}
+
 linked_list* ll_create_list() {
     linked_list *l;
     
@@ -15,7 +32,7 @@ linked_list* ll_create_list() {
     if (l == NULL) {
         return NULL;
     }
-    l->head = l->tail = l->curr = create_node(NULL, 0);
+    l->head = l->tail = l->curr = ll_create_node(NULL, 0);
     l->length = 0;
 
     return l;
@@ -24,7 +41,7 @@ linked_list* ll_create_list() {
 int ll_insert(linked_list *l, int element) {
     node *n;
 
-    n = create_node(l->curr->next_node, element);
+    n = ll_create_node(l->curr->next_node, element);
     if (n == NULL) {
         return -1;
     }
@@ -40,7 +57,7 @@ int ll_insert(linked_list *l, int element) {
 int ll_append(linked_list *l, int element) {
     node *n;
     
-    n = create_node(NULL, element);
+    n = ll_create_node(NULL, element);
     if (n == NULL) {
         return -1;
     }
