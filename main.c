@@ -6,8 +6,8 @@
 // TODO: how to create docs for functions in C?
 
 int main(void) {
-    linked_list *l = ll_create_list();
-    ll_append(l, 3);
-    ll_delete_list(l);
+    stack* s = s_create_stack();
+    s_push(s, 3);
+    s_delete_stack(s);
     return 0;
 }
