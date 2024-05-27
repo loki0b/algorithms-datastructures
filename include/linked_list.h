@@ -3,7 +3,7 @@
 
 typedef struct link ll_node;
 typedef struct list linked_list;
-node* ll_create_node(node *next_node, int element);
+ll_node* ll_create_node(ll_node *next_node, int element);
 linked_list* ll_create_list();
 int ll_insert(linked_list *l, int element);
 int ll_append(linked_list *l, int element);

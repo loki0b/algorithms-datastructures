@@ -3,7 +3,7 @@
 
 typedef struct link s_node;
 typedef struct list stack;
-node* s_create_node(node *next_node, int element);
+s_node* s_create_node(s_node *next_node, int element);
 stack* s_create_stack();
 int s_push(stack *s, int element);
 int s_pop(stack *s);
