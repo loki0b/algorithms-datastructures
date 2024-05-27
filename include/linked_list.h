@@ -1,7 +1,7 @@
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 
-typedef struct link node;
+typedef struct link ll_node;
 typedef struct list linked_list;
 node* ll_create_node(node *next_node, int element);
 linked_list* ll_create_list();
