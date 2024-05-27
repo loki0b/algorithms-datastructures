@@ -3,17 +3,17 @@
 typedef struct link {
     int element;
     struct link *next_node;
-} node;
+} s_node;
 
 typedef struct list {
-    node* top;
+    s_node* top;
     int length;
 } stack;
 
-node* s_create_node(node *next_node, int element) {
-    node *n;
+s_node* s_create_node(s_node *next_node, int element) {
+    s_node *n;
 
-    n = (node*) malloc(sizeof (node));
+    n = (s_node*) malloc(sizeof (s_node));
     if (n == NULL) {
         return NULL;
     }
@@ -37,7 +37,7 @@ stack* s_create_stack() {
 }
 
 int s_push(stack *s, int element) {
-    node *n;
+    s_node *n;
 
     n = s_create_node(s->top, element);
     if (n == NULL) {
@@ -55,7 +55,7 @@ int s_pop(stack *s) {
     }
 
     int element;
-    node* n;
+    s_node* n;
 
     element = s->top->element;
     n = s->top;
@@ -67,7 +67,7 @@ int s_pop(stack *s) {
 }
 
 void s_clear(stack *s) {
-    node *n;
+    s_node *n;
 
     while(s->top != NULL) {
         n = s->top;
