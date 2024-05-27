@@ -1,18 +1,9 @@
 // Sorts a given array by selection sort
 // Input: An array A[0..n - 1] of orderable elements
 // Output: Array A[0..n - 1] sorted in nondecreasing order
-void swap(int *a, int *b) {
-    int n;
+#include "../include/swap.h"
 
-    n = *a;
-    *a = *b;
-    *b = n;
-}
-
-void selection_sort(int *array, int array_size) {
-    int n;
-    
-    n = array_size;
+void selection_sort(int *array, int n) {
     for (int i = 0; i <= n - 2; i++) {
         int min = i;
 

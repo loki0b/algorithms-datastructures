@@ -2,13 +2,7 @@
 // Method: Divide-and-Conquer
 // Input: Subarray of array A[0..n - 1], defined by its left and right indices l and r
 // Output: Subarray A[l..r] sorted in nondecreasing order
-void swap(int *a, int *b) {
-    int n;
-
-    n = *a;
-    *a = *b;
-    *b = n
-}
+#include "../include/swap.h"
 
 int hoare_partition(int *array, int l, int r);
 
