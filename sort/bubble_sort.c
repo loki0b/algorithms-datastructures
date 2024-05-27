@@ -1,7 +1,13 @@
 // Sorts a given array by bubble sort
 // Input: An array A[0..n - 1] of orderable elements
 // Output: Array A[0.. n - 1] sorted in nondecreasing order
-#include "../include/functions.h"
+void swap(int *a, int *b) {
+    int n;
+
+    n = *a;
+    *a = *b;
+    *b = n;
+}
 
 void bubble_sort(int *array, int array_size) {
     int n;
