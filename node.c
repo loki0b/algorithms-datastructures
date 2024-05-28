@@ -1,9 +1,7 @@
 #include <stdlib.h>
+#include "include/node.h"
 
-typedef struct link {
-    int element;
-    struct link *next_node;
-} node;
+typedef struct link node; // why I can't just implement this struct here and not in the node.h?
 
 node* create_node(node *next_node, int element) {
     node* n;
