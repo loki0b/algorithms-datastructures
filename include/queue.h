@@ -1,14 +1,12 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
-typedef struct link q_node;
 typedef struct list queue;
-node* q_create_node();
-queue* q_create_stack();
-void q_enqueue();
-void q_dequeue();
-void q_clear();
-int q_front_value();
-int q_length();
+queue* create_queue();
+int enqueue(queue *q, int element);
+int dequeue(queue *q);
+void q_clear(queue *q);
+int front_value(queue *q);
+int q_length(queue *q);
 
 #endif
