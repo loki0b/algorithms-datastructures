@@ -1,11 +1,13 @@
 #include <stdio.h>
-#include "include/linked_list.h"
-#include "include/stack.h"
+#include "include/node.h"
+#include "include/queue.h"
 
 // TODO: how to create docs for functions in C?
 
 int main(void) {
-    //linked_list *l = ll_create_list();
-    stack *s = s_create_stack();
+    queue *q = create_queue();
+    enqueue(q, 3);
+    printf("%d\n", front_value(q));
+    dequeue(q);
     return 0;
 }
