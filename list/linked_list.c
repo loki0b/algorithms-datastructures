@@ -1,29 +1,12 @@
 #include <stdlib.h>
-
-typedef struct link {
-    int element;
-    struct link *next_node;
-} ll_node;
+#include "../include/node.h"
 
 typedef struct list {
-    ll_node *head;
-    ll_node *tail;
-    ll_node *curr;
+    node *head;
+    node *tail;
+    node *curr;
     int length;
 } linked_list; 
-
-ll_node* ll_create_node(ll_node *next_node, int element) {
-    ll_node *n;
-
-    n = (ll_node*) malloc(sizeof (ll_node));
-    if (n == NULL) {
-        return NULL;
-    }
-    n->element = element;
-    n->next_node = next_node;
-
-    return n;
-}
 
 linked_list* ll_create_list() {
     linked_list *l;
@@ -39,9 +22,9 @@ linked_list* ll_create_list() {
 }
 
 int ll_insert(linked_list *l, int element) {
-    ll_node *n;
+    node *n;
 
-    n = ll_create_node(l->curr->next_node, element);
+    n = create_node(l->curr->next_node, element);
     if (n == NULL) {
         return -1;
     }
@@ -55,9 +38,9 @@ int ll_insert(linked_list *l, int element) {
 }
 
 int ll_append(linked_list *l, int element) {
-    ll_node *n;
+    node *n;
     
-    n = ll_create_node(NULL, element);
+    n = create_node(NULL, element);
     if (n == NULL) {
         return -1;
     }
@@ -74,7 +57,7 @@ int ll_pop(linked_list *l) {
     }
 
     int element;
-    ll_node *n;
+    node *n;
     
     element = l->curr->next_node->element;
     n = l->curr->next_node;
@@ -89,7 +72,7 @@ int ll_pop(linked_list *l) {
 }
 
 void ll_clear(linked_list *l) {
-    ll_node *n;
+    node *n;
 
     l->tail = l->curr = l->head;
     while(l->head->next_node != NULL) {
@@ -130,7 +113,7 @@ int ll_previous(linked_list *l) {
         return -1;
     }
 
-    ll_node *n;
+    node *n;
     
     n = l->head;
     while(n->next_node != l->curr) {
@@ -161,7 +144,7 @@ int ll_curr_position(linked_list *l) {
     }
 
     int i;
-    ll_node *n;
+    node *n;
 
     i = 0;
     n = l->head;
