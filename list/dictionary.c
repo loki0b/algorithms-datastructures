@@ -110,7 +110,6 @@ dict* create_dict(int size, int (*hash)(char*)) {
 }
 
 void dict_insert(dict *d, char *key, char *value) {
-    //if (find(d, key) == NULL) {}
     int pos;
     entry_linked_list *l;
     entry *e;
@@ -119,6 +118,44 @@ void dict_insert(dict *d, char *key, char *value) {
     l = d->hash_table[pos];
     e = create_entry(key, value);
     entry_append(l, e);
+    d->count_elements++;
+}
+
+entry* find(dict *d, char *key, char* value) {
+    int pos;
+    entry_linked_list *l;
+    node *n;
+
+    pos = d->hash(key);
+    l = d->hash_table[pos];
+    if (l->length == 0) {
+        return NULL;
+    }
+    
+    n = l->head->next_node;
+    while(n->element->value != value && n->next_node != NULL) {
+        n = n->next_node;
+    }
+    
+    if(n->element->value == value) {
+        return n->element;
+    }
+
+    return NULL;
+}
+
+int dict_remove(dict *d, char *key, char *value) {
+    int pos;
+    entry_linked_list *l;
+
+    pos = d->hash(key);
+    l = d->hash_table[pos];
+    if (find(d, key, value) == NULL) {
+        return -1;
+    }
+
+    
+
 }
 
 entry* get_entry(dict *d, char* key) {
@@ -137,4 +174,6 @@ int main() {
 
     entry *e = get_entry(d, "nome");
     printf("%s: %s\n", e->key, e->value);
+    if (find(d, "nome", "henrique") != NULL) printf("1\n");
+    else printf("2\n");
 }

@@ -2,10 +2,11 @@
 #define DICT_H
 
 typedef struct list dict;
-void d_insert(dict *d, key k, char *element); // TODO: implement the key and element with char array
-char* d_remove(dict *d, key k);
+typedef struct e entry;
+void d_append(dict *d, entry *element); // TODO: implement the key and element with char array
+char* d_remove(dict *d, char* key);
 char** get_keys*(dict *d);
-char* find(dict *d, key k);
+char* find(dict *d, char* key);
 int size(dict *d);
 
 #endif
